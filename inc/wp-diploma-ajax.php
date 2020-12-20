@@ -5,21 +5,11 @@
 include(WP_DIPLOMA_PATH.'/vendor/autoload.php');
 	class wp_diploma_ajax extends WpDiploma{
 	function __construct(){
-
-        if ( is_admin() ) {
-            add_action( "wp_ajax_diploma_create_bulk", array($this, 'create_bulk_diploma') ,10);
-            add_action( "wp_ajax_nopriv_diploma_create_bulk", array($this, 'create_bulk_diploma') ,10 );
-        } else {
+      
             add_action( "wp_ajax_diploma_generate", array($this, 'wp_diploma_generate') );
             add_action( "wp_ajax_nopriv_diploma_generate", array($this, 'wp_diploma_generate') );
-        }
        
 	}
-       public function create_bulk_diploma(){
-                $response['message'] = 'Error in creating folder';
-                $response['status'] = true;
-            $this->responseJsonResults($response);
-    } 
 	public function wp_diploma_generate(){
 	      $folder_location = ABSPATH . 'wp-content/uploads/wp_diploma';
             $folder_created  = wp_mkdir_p($folder_location);
