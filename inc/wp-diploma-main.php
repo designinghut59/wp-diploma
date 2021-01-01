@@ -60,7 +60,7 @@ class WpDiploma{
           <div class="form-group row">
             <label for="name_size_wp_diploma" class="col-sm-2 col-form-label">Name font size:</label>
             <div class="col-lg-10">
-              <input type="text" class="form-control-plaintext" id="name_size_wp_diploma"  name="name_size_wp_diploma" placeholder="example 10px" value="<?php echo $name_size_wp_diploma; ?>">
+              <input type="number" min="10" max="70" class="form-control-plaintext" id="name_size_wp_diploma"  name="name_size_wp_diploma" placeholder="example 10" value="<?php echo $name_size_wp_diploma; ?>">
             </div>
           </div>
            <div class="form-group row">

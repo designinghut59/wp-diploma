@@ -19,15 +19,29 @@ include(WP_DIPLOMA_PATH.'/vendor/autoload.php');
             $name_size_wp_diploma = get_post_meta($post_id, 'name_size_wp_diploma', true);
             $name_font_family = get_post_meta($post_id, 'name_font_family', true);
             $name_position = get_post_meta($post_id, 'name_position', true);
+
+            if ($name_size_wp_diploma >= 40 && $name_size_wp_diploma <= 50) {
+                $margin_left_percentage = 0.35;
+                $margin_top_percentage = 0.3;
+            }
+            elseif ($name_size_wp_diploma > 50 && $name_size_wp_diploma <= 70) {
+                $margin_left_percentage = 0.3;
+                $margin_top_percentage = 0.27;
+            }
+            else{
+                $margin_left_percentage = 0.4;
+                $margin_top_percentage = 0.35;
+            }
         	$name_variable_settings = array(
-        		'center' => 'margin-left:'.$width_orig*.4.'; margin-top:'.$height_orig *.35.';',
+                'center' => 'margin-left:'.$width_orig * $margin_left_percentage.'; margin-top:'.$height_orig * $margin_top_percentage.';',
+        		// 'center' => 'margin-left:'.$width_orig*.3.'; margin-top:'.$height_orig *.25.';',
         		'top_left' => '',
         		'top_right' => 'margin-left:'.$width_orig*.7.';',
         		'bottom_left' => 'margin-top:'.$height_orig*.55.';',
         		'bottom_right' => 'margin-left:'.$width_orig*.7.'; margin-top:'.$height_orig *.55.';',
         	);
             $name_info =array(
-            	"font_size" => $name_size_wp_diploma,
+            	"font_size" => $name_size_wp_diploma. "px",
             	"font_family" => $name_font_family,
             	"position" => $name_variable_settings[$name_position],
             	"date_margin" => $width_orig - 630,
