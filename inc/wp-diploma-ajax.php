@@ -33,8 +33,7 @@ include(WP_DIPLOMA_PATH.'/vendor/autoload.php');
                 $margin_top_percentage = 0.35;
             }
         	$name_variable_settings = array(
-                'center' => 'margin-left:'.$width_orig * $margin_left_percentage.'; margin-top:'.$height_orig * $margin_top_percentage.';',
-        		// 'center' => 'margin-left:'.$width_orig*.3.'; margin-top:'.$height_orig *.25.';',
+                'center' => 'text-align: center !important; margin-top:'.$height_orig * $margin_top_percentage.';',
         		'top_left' => '',
         		'top_right' => 'margin-left:'.$width_orig*.7.';',
         		'bottom_left' => 'margin-top:'.$height_orig*.55.';',
