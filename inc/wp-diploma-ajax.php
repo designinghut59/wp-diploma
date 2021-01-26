@@ -19,18 +19,18 @@ include(WP_DIPLOMA_PATH.'/vendor/autoload.php');
             $name_size_wp_diploma = get_post_meta($post_id, 'name_size_wp_diploma', true);
             $name_font_family = get_post_meta($post_id, 'name_font_family', true);
             $name_position = get_post_meta($post_id, 'name_position', true);
-
+           
             if ($name_size_wp_diploma >= 40 && $name_size_wp_diploma <= 50) {
                 $margin_left_percentage = 0.35;
-                $margin_top_percentage = 0.3;
+                $margin_top_percentage = (( in_array($height_orig, range(897,1400)) ) ?  0.3 : 0.4 ) ;
             }
             elseif ($name_size_wp_diploma > 50 && $name_size_wp_diploma <= 70) {
                 $margin_left_percentage = 0.3;
-                $margin_top_percentage = 0.27;
+                $margin_top_percentage = (( in_array($height_orig, range(897,1400)) ) ?  0.27 : 0.37 ) ;
             }
             else{
                 $margin_left_percentage = 0.4;
-                $margin_top_percentage = 0.35;
+                $margin_top_percentage = (( in_array($height_orig, range(897,1400)) ) ?  0.35 : 0.42 ) ;
             }
         	$name_variable_settings = array(
                 'center' => 'text-align: center !important; margin-top:'.$height_orig * $margin_top_percentage.';',
